@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B08493F7-BF1A-4378-92A5-84F329FFFBED}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Marmalade.Editor</RootNamespace>
+    <AssemblyName>Marmalade.Net.Editor</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;XNA_MATH</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="OpenTK, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.GLControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\OpenTK.GLControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GameDocumentWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameDocumentWindow.Designer.cs">
+      <DependentUpon>GameDocumentWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GameDocumentWindow.resx">
+      <DependentUpon>GameDocumentWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Modules\Marmalade.Net.IwAnim\Marmalade.Net.IwAnim.csproj">
+      <Project>{9FA7E476-FE40-46C0-891E-F5B7B98B9C39}</Project>
+      <Name>Marmalade.Net.IwAnim</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Modules\Marmalade.Net.IwGraphics\Marmalade.Net.IwGraphics.csproj">
+      <Project>{C0631148-E525-4EE6-B165-4CABFCD1536E}</Project>
+      <Name>Marmalade.Net.IwGraphics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Modules\Marmalade.Net.IwGx\Marmalade.Net.IwGx.csproj">
+      <Project>{87EDEE7E-3A05-4F45-BC59-A4DA8EEC4171}</Project>
+      <Name>Marmalade.Net.IwGx</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Modules\Marmalade.Net.IwResManager\Marmalade.Net.IwResManager.csproj">
+      <Project>{9A5AC3B7-5B9F-4C5D-ADF6-A9440A63B279}</Project>
+      <Name>Marmalade.Net.IwResManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Modules\Marmalade.Net.IwUtil\Marmalade.Net.IwUtil.csproj">
+      <Project>{C0B5BC37-2A47-4C03-8633-F14D58B53719}</Project>
+      <Name>Marmalade.Net.IwUtil</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Modules\ThirdParty\SimpleMenu\Marmalade.Net.SimpleMenu\Marmalade.Net.SimpleMenu.csproj">
+      <Project>{CA99F716-5DBE-43AF-90C2-C877AC352BDE}</Project>
+      <Name>Marmalade.Net.SimpleMenu</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
